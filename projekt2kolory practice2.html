@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Color change after clicking </title>
+</head>
+<style>
+    * {
+        margin: 0;
+        padding: 0;
+    }
+
+    body {
+        display: flex;
+
+    }
+
+    .s1,
+    .s2 {
+        flex-basis: 50%;
+        height: 100vh;
+    }
+
+    .red {
+        background-color: red;
+    }
+</style>
+
+<body>
+    <div class="s1 red"></div>
+    <div class="s2"></div>
+
+    <script>
+        const firstDiv = document.querySelector('.s1');
+        const secondDiv = document.querySelector('.s2');
+
+        function changeColor() {
+            firstDiv.classList.toggle('red');
+            secondDiv.classList.toggle('red');
+
+            console.log(this);
+        }
+
+        firstDiv.addEventListener('click', changeColor);
+        secondDiv.addEventListener('click', changeColor);
+    </script>
+</body>
+
+</html>
